@@ -1,0 +1,31 @@
+{% extends "layout.html"%}
+{% block content%}
+<h1>Voici le résultat de votre recherche:</h1>
+<br>
+<main>
+<div class="animal-details">
+	      {% if animaux | length != 0 %}
+		{% for animal in animaux %}
+            <img src="/img/{{animal.espece}}-{{animal.race}}.jpeg" alt="On est desole pour l'absance d'image de {{ animal.nom }}">
+            <div class="animal-info">
+            <h2>Bienvenue à {{ animal.nom }}:</h2>
+                <p>Espece: {{ animal.espece }}</p>
+                <p> Race: {{ animal.race }}</p>
+                <p> Age:  {{ animal.age }} ans</p>
+                <p> Email: {{ animal.courriel }}</p>
+                <p> Adresse: {{ animal.adresse }}</p>
+                <p> Ville: {{ animal.ville }}</p>
+                <p> Code Postal: {{animal.code}}</p>
+                <p> Description: {{animal.description}}</p>
+            </div>
+            {% endfor %}
+     {% else %}
+     <img src="/img/resultat-notfound.webp" alt="">
+     <div class="animal-info">
+     <p>Aucun résultat.</p>
+      </div>
+     {% endif %}
+        </div>
+</main>
+{% endblock %}
+

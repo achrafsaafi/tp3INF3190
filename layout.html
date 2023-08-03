@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="view" content="width=device-width, initial-scale=1.0">
+    <title>contacter</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-header">
+            <div class="logo">
+                <p><span>Animal</span>House</p>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <ul class="liste-fonction">
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/form">Mise en adoption</a></li>
+                <li><a href="/listeanimaux">Adopter</a></li>
+            </ul>
+            <form method="get" name="search" action="/recherche" class="recherche">
+                <input type="text" name="query" class="recherche" placeholder="Rechercher">
+                <button  class ="logo-recherche" type = "submit"></button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+    {% block content %}{% endblock %}
+    </div>
+    <div class="menu-footer">
+        <div>
+            <h3>Decouvrer AnimalHouse</h3>
+            <p>AnimalHouse est un site dédié à l'adaptation animale ! Nous sommes passionnés par le monde
+                fascinant des animaux et nous souhaitons partager avec vous les incroyables histoires d'adaptation
+                 que la nature nous offre. Notre mission est de sensibiliser et d'éduquer sur les mécanismes ingénieux 
+                 que les animaux développent pour survivre et prospérer dans des environnements variés et parfois extrêmes.</p>
+        </div>
+        <div>
+            <h3>Contactez-nous</h3>
+            <p>Vous avez des questions ou des commentaires à nous soumettre? 
+               Rien de plus simple! Il suffit de remplir le court formulaire
+               conçu à cet effet ou nous appeller :</p>
+              <p>Lundi au vendredi : 8 h à 20 h</p>
+              <p>Samedi : 8 h à 16 h</p>
+              <p>(438) 528-4345</p>
+              <a href="#">Contact us</a>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class ="copyrightt">
+            &copy; Copyright <strong><span>SaafiGroup</span></strong>. All Rights Reserved
+            <p>Site crée par Saafi Achraf && Boudaoud Wassim - Juillet 2023</p>
+        </div>
+    </div>
+</body>
+</html> 

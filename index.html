@@ -1,0 +1,60 @@
+{% extends "layout.html"%}
+{% block content%}
+<div class="container">
+    <div class="text-acceuil">
+        <h2>Profite maintenant !<br>Ton nouveau animale de companie</h2>
+        <p>"Dans la nature, rien n'est jamais parfait, tout est constamment en évolution et en adaptation." - Helen Fisher</p>
+    </div>
+    <div class="image-acceuil">
+        <img src="/img/image_acceuil.jpg"  alt="" data-aos="zoom-out" data-aos-delay="300">
+    </div>
+    </div>
+</div>
+<div class="animals">    
+   <h1>Voici quelques animaux présentement disponibles au refuge</h1>
+   <div class="animal-list">
+      {% for animal in liste_animaux %}
+      <div class="animal-item">
+         <a href="animal/{{animal.id}}" onclick="return handleClick('{{animal.id}}')">                
+            <img src="/img/{{animal.espece}}-{{animal.race}}.jpeg" alt="photo de l'espece {{animal.espece}}">
+         </a>
+         <div class="animal-info">
+            <a id="animal" href="animal/{{animal.id}}">
+               <h2>{{ animal.nom }}</h2> 
+               <p>{{ animal.age }} ans</p>
+               <p>{{ animal.espece }}</p>
+            </a>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+</div>
+
+<div class="events">
+  <div class="section-header">
+          <h2>Events</h2>
+          <p>Partage <span>tes Moments</span> avec notre association</p>
+  </div>
+<table>
+        <thead><tr>
+            <th><img src="img/image_association1.jpg" alt="image villa 1"></th>   
+            <th><img src="img/image_association2.jpg" alt="image villa 2"></th>
+            <th><img src="img/image_association3.jpg" alt="image villa 3"></th>
+        </thead>
+        <tbody>
+            <tr>
+            <th><h3>Luna</h3></th>
+            <th><h3>Ruby</h3></th>
+            <th><h3>Oreo</h3></th></tr>
+            <tr>
+            <th><p>Lors d'une journée d'adoption, un chat adulte a captivé le cœur d'un citoyen bienveillant qui a 
+            choisi de lui offrir une nouvelle vie dans un foyer aimant, comblant ainsi le chat et son nouvel adoptant de bonheur.</p></th>
+            <th><p>Un jour, lors d'une patrouille, un policier a découvert un chaton abandonné et affamé au bord de la route. 
+            Touché par sa détresse, il l'a pris sous son aile, et depuis ce jour, le chaton a trouvé un foyer aimant dans
+            le cœur bienveillant de son héros en uniforme.</p></th>
+            <th><p>Un policier vigilant a repéré un chaton en détresse coincé dans un arbre. Sans hésiter,
+            il est monté avec agilité pour le récupérer, offrant au minuscule félin une seconde chance heureuse dans ses bras secourables.</p></th></tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

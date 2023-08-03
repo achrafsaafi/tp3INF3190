@@ -1,0 +1,20 @@
+{% extends "layout.html"%}
+{% block content%}
+<main>
+<div class="animal-details">
+            <img src="/img/{{animal.espece}}-{{animal.race}}.jpeg" alt="On est desole pour l'absance d'image de {{ animal.nom }}">
+            <div class="animal-info">
+                <h2>Bienvenue à {{ animal.nom }} ! entre nous</h2>
+                <p>Espece: {{ animal.espece }}</p>
+                <p> Race: {{ animal.race }}</p>
+                <p> Age:  {{ animal.age }} ans</p>
+                <p> Email: <a href="mailto: {{ animal.courriel }}"> {{ animal.courriel }}</a> </p>
+                <p> Adresse: {{ animal.adresse }}</p>
+                <p> Ville: {{ animal.ville }}</p>
+                <p> Code Postal: {{animal.code}}</p>
+                <p> Description: {{animal.description}}</p>
+            </div>
+        </div>
+</main>
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends "layout.html"%}
+{% block content%}
+<div class="animals">    
+   <h1>Voici les présentement disponibles au refuge</h1>
+   <div class="animal-list">
+      {% for animal in liste_animaux %}
+      <div class="animal-item">
+         <a href="animal/{{animal.id}}" onclick="return handleClick('{{animal.id}}')">                
+            <img src="/img/{{animal.espece}}-{{animal.race}}.jpeg" alt="photo de l'espece {{animal.espece}}">
+         </a>
+         <div class="animal-info">
+            <a id="animal" href="animal/{{animal.id}}">
+               <h2>{{ animal.nom }}</h2> 
+               <p>{{ animal.age }} ans</p>
+               <p>{{ animal.espece }}</p>
+               
+            </a>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+</div>
+{% endblock %}

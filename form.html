@@ -1,0 +1,43 @@
+{% extends "layout.html"%}
+{% block content%}
+<div class="formulaire-container1">
+        <form class="soumission" action="/envoieFormulaire" onsubmit="return verifFormulaire()" method="post">
+            <label for="nomAnimal">Quelle est son nom?</label>
+            <input type="text" id="nomAnimal" name="nomAnimal" placeholder="ex: lisa">
+            <p id="validationMessage"></p>
+            <label for="especeAnimal">Quelle est l'espèce de l'animal?</label>
+            <input type="text" id="especeAnimal" name="Espece" placeholder="ex: Chien" >
+            <p id="especeValidationMessage"></p>
+            <label for="raceAnimal">Quelle est la race de l'animal?</label>
+            <input type="text" id="raceAnimal" name="Race" placeholder="ex: pitbull">
+            <p id="raceValidationMessage"></p>
+            <label for="ageSelect">Quelle est l'âge de l'animal?</label>
+            <select name="age" id="ageSelect"></select>
+            <p id="ageValidationMessage"></p>
+            <label for="descriptionAnimal">Description</label>
+            <input type="text" id="descriptionAnimal" name="description" placeholder="ex: Petit chien qui aime ....">
+            <p id="descriptionValidationMessage"></p>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="ex: asdfghj@qwertyu.ca">
+            <p id="emailValidationMessage"></p>
+            <label for="adresseCivique">Adresse Civique</label>
+            <input type="text" id="adresseCivique" name="adresse" placeholder="ex: 123 villneuve">
+            <p id="adresseValidationMessage"></p>
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville"placeholder="ex: Montréal" >
+            <p id="villeValidationMessage"></p>
+            <label for="codePostal">Code Postal</label>
+            <input type="text" id="codePostal" name="codePostal" placeholder="ex: H7N 3N1">
+            <p id="postalValidationMessage"></p>
+
+            <button class="button" type="submit"  onclick="return envoieFormulaire()">Soumettre</button>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            genererListeAge();
+        });
+    </script>
+
+{% endblock %}
